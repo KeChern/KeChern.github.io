@@ -184,4 +184,8 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Here is Ke Chen(Chuck, 陈柯).
+I am a PhD student in the Graphics & Geometric Computing Laboratory (GCL), University of Science and Technology of China (USTC), under the supervision of Prof. Ligang Liu. I earned his bachelor’s degree in Information and Computing Science from USTC in 2023. My research interests include is in computer graphics.
+
+
+<!-- Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks. -->
