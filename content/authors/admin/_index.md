@@ -41,10 +41,10 @@ profiles:
     url: https://github.com/KeChern
   # - icon: brands/linkedin
   #   url: https://www.linkedin.com/
-  # - icon: academicons/google-scholar
-  #   url: https://scholar.google.com/
-  # - icon: academicons/orcid
-  #   url: https://orcid.org/
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=Hbkn6vkAAAAJ&hl=en
+  - icon: academicons/orcid
+    url: https://orcid.org/0009-0000-4791-7711
 
 interests:
   - Computer Graphics
