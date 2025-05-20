@@ -56,7 +56,7 @@ education:
   - area: Visiting student in Computer Graphics, 2024 - Now
     institution: Singapore University of Technology and Design
     date_start: 2024-10-07
-    date_end: Now
+    date_end: ''
     summary: |
       GPA: 3.4/4.0
       
@@ -67,7 +67,7 @@ education:
   - area: PhD student in Computer Graphics, 2023 - Now
     institution: University of Science and Technology of China
     date_start: 2023-09-01
-    date_end: Now
+    date_end: ''
     summary: |
       GPA: 3.8/4.0
 

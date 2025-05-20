@@ -33,9 +33,9 @@ tags:
 - Source Themes
 featured: false
 
-# links:
-# - name: ""
-#   url: ""
+links:
+- name: 'page'
+  url: https://sutd-cgl.github.io/supp/Publication/projects/2024-SIGAsia-mpcMech/index.html
 url_pdf: http://arxiv.org/pdf/1512.04133v1
 url_code: ''
 url_dataset: ''
