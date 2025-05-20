@@ -47,9 +47,10 @@ profiles:
   #   url: https://orcid.org/
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Computer Graphics
+  - Computational Design
+  - Geometric Modeling
+  
 
 education:
   - area: PhD Artificial Intelligence
