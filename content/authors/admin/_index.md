@@ -53,8 +53,8 @@ interests:
   
 
 education:
-  - area: Visiting student in Computer Graphics, 2024 - Now
-    institution: Singapore University of Technology and Design
+  - area: Visiting student in Computer Graphics
+    institution: SUTD, 2024 - Now
     date_start: 2024-10-07
     date_end: ''
     summary: |
@@ -64,8 +64,8 @@ education:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: PhD student in Computer Graphics, 2023 - Now
-    institution: University of Science and Technology of China
+  - area: PhD student in Computer Graphics
+    institution: USTC, 2023 - Now
     date_start: 2023-09-01
     date_end: ''
     summary: |
@@ -75,8 +75,8 @@ education:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: B.S in Information and Computing Science, 2019 - 2023
-    institution: University of Science and Technology of China
+  - area: B.S in Information and Computing Science
+    institution: USTC, 2019 - 2023
     date_start: 2019-09-01
     date_end: 2023-06-30
     summary: |
