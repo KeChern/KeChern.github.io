@@ -54,16 +54,16 @@ interests:
 
 education:
   - area: Visiting student in Computer Graphics, 2023 - Now
-      institution: Singapore University of Technology and Design
-      date_start: 2024-10-07
-      date_end: Now
-      # summary: |
-      #   GPA: 3.4/4.0
-        
-      #   Courses included:
-      #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    institution: Singapore University of Technology and Design
+    date_start: 2024-10-07
+    date_end: Now
+    # summary: |
+    #   GPA: 3.4/4.0
+      
+    #   Courses included:
+    #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
   - area: PhD student in Computer Graphics, 2023 - Now
     institution: University of Science and Technology of China
     date_start: 2023-09-01
@@ -84,7 +84,7 @@ education:
     # button:
     #   text: 'Read Thesis'
     #   url: 'https://example.com'
-    
+
 work:
   - position: Director of Cloud Infrastructure
     company_name: GenCoin
