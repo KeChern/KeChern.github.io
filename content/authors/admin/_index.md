@@ -53,37 +53,38 @@ interests:
   
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.8/4.0
+  - area: Visiting student in Computer Graphics, 2023 - Now
+      institution: Singapore University of Technology and Design
+      date_start: 2024-10-07
+      date_end: Now
+      # summary: |
+      #   GPA: 3.4/4.0
+        
+      #   Courses included:
+      #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - area: PhD student in Computer Graphics, 2023 - Now
+    institution: University of Science and Technology of China
+    date_start: 2023-09-01
+    date_end: Now
+    # summary: |
+    #   GPA: 3.8/4.0
 
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
-      
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    #   Courses included:
+    #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - area: B.S in Information and Computing Science, 2019 - 2023
+    institution: University of Science and Technology of China
+    date_start: 2019-09-01
+    date_end: 2023-06-30
+    # summary: |
+    #   Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+    # button:
+    #   text: 'Read Thesis'
+    #   url: 'https://example.com'
+    
 work:
   - position: Director of Cloud Infrastructure
     company_name: GenCoin
@@ -184,6 +185,6 @@ awards:
 
 ## About Me
 
-Here is [Ke Chen[(https://kechern.github.io/) (Chuck, 陈柯).
+Here is [Ke Chen](https://kechern.github.io/) (Chuck, 陈柯).
 I am a PhD student in the [Graphics & Geometric Computing Laboratory](http://gcl.ustc.edu.cn/en/) (GCL), [University of Science and Technology of China](https://en.ustc.edu.cn/) (USTC), under the supervision of [Prof. Ligang Liu](http://staff.ustc.edu.cn/~lgliu/). I earned my bachelor’s degree in Information and Computing Science from USTC in 2023. My research interest is in computer graphics.
-Now I am a visiting student in [Computer Graphics Laboratory](https://sutd-cgl.github.io/) (CGL) of [University of Technology and Design](https://www.sutd.edu.sg/) (SUTD), under the supervision of [Prof. Peng Song](https://songpenghit.github.io/).
+Now I am a visiting student in [Computer Graphics Laboratory](https://sutd-cgl.github.io/) (CGL) of [Singapore University of Technology and Design](https://www.sutd.edu.sg/) (SUTD), under the supervision of [Prof. Peng Song](https://songpenghit.github.io/).
