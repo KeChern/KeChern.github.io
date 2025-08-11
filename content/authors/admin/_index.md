@@ -185,6 +185,6 @@ awards:
 
 ## About Me
 
-Here is [Ke Chen](https://kechern.github.io/) (Chuck).
+Here is [Ke Chen](https://kechern.github.io/).
 I am a PhD student in the [Graphics & Geometric Computing Laboratory](http://gcl.ustc.edu.cn/en/) (GCL), [University of Science and Technology of China](https://en.ustc.edu.cn/) (USTC), under the supervision of [Prof. Ligang Liu](http://staff.ustc.edu.cn/~lgliu/). I earned my bachelor’s degree in Information and Computing Science from USTC in 2023. My research interest is in computer graphics.
 Now I am a visiting student in [Computer Graphics Laboratory](https://sutd-cgl.github.io/) (CGL) of [Singapore University of Technology and Design](https://www.sutd.edu.sg/) (SUTD), under the supervision of [Prof. Peng Song](https://songpenghit.github.io/).
