@@ -48,7 +48,7 @@
     }
 
     html {
-      overflow-x: clip;
+      overflow-x: visible;
       --header-offset: 90px;
       scroll-padding-top: var(--header-offset);
       scroll-behavior: smooth;
@@ -127,9 +127,9 @@
     .nav .btns {
       display: flex;
       align-items: center;
-      gap: 5px;
       flex-wrap: wrap;
       justify-content: flex-end;
+      gap: 5px;
     }
 
     .text-btn {
@@ -230,13 +230,7 @@
     }
 
     .span {
-      grid-column: span var(--span, 12);
-    }
-
-    @media (max-width: 1000px) {
-      .span {
-        grid-column: span 12;
-      }
+      grid-column: span 12;
     }
 
     /* Profile */
@@ -524,7 +518,25 @@
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 750px) {
+      .nav .btns a {
+        font-size: 13px;
+      }
+
+      .nav .btns .icon-btn span {
+        display: none;
+      }
+
+      .nav .brand strong {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .brand .title {
+        display: none;
+      }
+
       .stack .card {
         flex-direction: column;
       }
@@ -534,11 +546,6 @@
         gap: 18px;
         align-items: flex-start;
       }
-
-      .nav {
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 
