@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="icon" href="./assets/logo.ico">
+  <title>Ke Chen's Homepage</title>
+  <meta name="description" content="A PhD student in computer graphics." />
+
+  <!-- Subtle icon library -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      /* Light as default */
+      --bg: rgba(255, 255, 255, 1);
+      --header-bg: linear-gradient(180deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, .25));
+
+      --stroke: rgba(0, 0, 0, .2);
+
+      --text: rgba(0, 0, 0, 1);
+      --muted: rgba(0, 0, 0, 0.6);
+
+      --accent: rgb(150, 90, 245, 1);
+
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --ease: cubic-bezier(.2, .8, .2, 1);
+    }
+
+    body[data-theme="dark"] {
+      --bg: rgba(0, 0, 0, 1);
+      --header-bg: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .25));
+
+      --stroke: rgba(255, 255, 255, .2);
+
+      --text: rgba(255, 255, 255, 1);
+      --muted: rgba(255, 255, 255, 0.6);
+
+      --accent: rgba(0, 120, 255, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: clip;
+      --header-offset: 90px;
+      scroll-padding-top: var(--header-offset);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: visible;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(15px);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    main {
+      padding: 30px 0 50px;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 10px;
+    }
+
+    .nav .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+      color: var(--text);
+      user-select: none;
+    }
+
+    .brand img {
+      width: 40px;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, .1);
+      border: 1px solid rgba(255, 255, 255, 1);
+      filter: saturate(1.0) contrast(1.0);
+    }
+
+    .brand .title {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.0;
+    }
+
+    .brand strong {
+      font-size: 20px;
+      letter-spacing: .0em;
+    }
+
+    .brand span {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .nav .btns {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .text-btn {
+      color: var(--muted);
+      font-size: 15px;
+      padding: 10px 10px;
+      border-radius: 1000px;
+      border: 1px solid transparent;
+      background: rgba(255, 255, 255, .0);
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .text-btn:hover {
+      color: var(--text);
+      border: 1px solid var(--accent);
+    }
+
+    body[data-theme="dark"] .text-btn:hover {
+      color: var(--text);
+      border: 1px solid var(--accent);
+      background: rgba(255, 255, 255, .2);
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 10px;
+      border-radius: 1000px;
+      font-size: 15px;
+      color: var(--text);
+      border: 1px solid var(--stroke);
+      background: var(--bg);
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .icon-btn i {
+      color: var(--accent);
+      width: 1.0em;
+      text-align: center;
+      flex: 0 0 1.0em;
+    }
+
+    body[data-theme="dark"] .icon-btn {
+      background: radial-gradient(circle at 25px 5px, rgba(255, 255, 255, .13), transparent 30px),
+        linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .01));
+    }
+
+    .icon-btn:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    body[data-theme="dark"] .icon-btn:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+      background: radial-gradient(circle at 12px 5px, rgba(255, 255, 255, .13), transparent 30px),
+        linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .01));
+    }
+
+    .icon-btn:active {
+      transform: translateY(0px);
+    }
+
+    body[data-theme="dark"] .icon-btn:active {
+      transform: translateY(0px);
+    }
+
+    /* Section */
+    main .section {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+      will-change: transform, opacity;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0px;
+    }
+
+    .section[data-in="true"] {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section .block {
+      /* border: 1px solid var(--stroke); */
+      /* border-radius: 20px; */
+      /* box-shadow: var(--shadow); */
+      overflow: hidden;
+      position: relative;
+      padding: 25px 25px;
+    }
+
+    .span {
+      grid-column: span var(--span, 12);
+    }
+
+    @media (max-width: 1000px) {
+      .span {
+        grid-column: span 12;
+      }
+    }
+
+    /* Profile */
+    .block .profile {
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .profile .avatar {
+      width: 150px;
+      height: auto;
+      border-radius: 0px;
+      /* border: 1px solid var(--stroke); */
+      overflow: visible;
+      flex: 0 0 auto;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: saturate(1.0) contrast(1.0);
+    }
+
+    .profile .person {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .person .name {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin: 0px 0px 10px
+    }
+
+    .person .name strong {
+      font-size: 45px;
+      letter-spacing: -.0em;
+    }
+
+    .person .name span {
+      color: var(--muted);
+      font-size: 20px;
+    }
+
+    .person .address {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(10, 130, 255, .1);
+    }
+
+    .person .contact {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .05em;
+      margin: 0px 0px 10px
+    }
+
+    .block h1 {
+      margin: 0px 0px 15px;
+      font-size: 24px;
+      letter-spacing: -.0em;
+    }
+
+    .block .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .block .stack {
+      display: grid;
+      gap: 15px;
+    }
+
+    .stack .card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 20px 20px;
+      border-radius: 15px;
+      border: 1px solid var(--stroke);
+      background: var(--bg);
+      cursor: default;
+      min-width: 0;
+    }
+
+    .block h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -.0em;
+    }
+
+    .block .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .15);
+      background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, .2), transparent 60%),
+        linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .01));
+      color: var(--accent);
+      flex: 0 0 auto;
+      overflow: visible;
+    }
+
+    .icon img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
+      object-fit: cover;
+      display: block;
+      background: rgba(255, 255, 255, 0);
+    }
+
+    .block .brand-logo {
+      width: 60px;
+      height: auto;
+      align-self: center;
+      overflow: visible;
+      border-radius: 0px;
+      /* border: 1px solid rgba(0, 0, 0, .15); */
+      flex: 0 0 auto;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      filter: saturate(1.0) contrast(1.0);
+    }
+
+    .block .figure {
+      width: 250px;
+      height: auto;
+      align-self: center;
+      overflow: visible;
+      border-radius: 0px;
+      /* border: 1px solid rgba(0, 0, 0, .15); */
+      flex: 0 0 auto;
+    }
+
+    .figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      filter: saturate(1.0) contrast(1.0);
+    }
+
+    .block .desc {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 78ch;
+    }
+
+    .desc a {
+      color: var(--accent);
+      text-decoration: none;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    .desc a:hover {
+      color: var(--text);
+      font-weight: 450;
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+    }
+
+    .desc a:focus-visible {
+      color: var(--text);
+      font-weight: 600;
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 5px;
+    }
+
+    .block .chev {
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .block .meta {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    /* chips */
+    .block .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .chips .chip {
+      font-size: 15px;
+      padding: 10px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(20, 20, 20, .05);
+      color: var(--muted);
+    }
+
+    body[data-theme="dark"] .chip {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    footer {
+      margin-top: 10px;
+      border-top: none;
+      text-align: center;
+
+      color: var(--muted);
+      font-size: 13px;
+      font-family: var(--mono);
+      letter-spacing: .03em;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255, 255, 255, .3);
+      backdrop-filter: blur(15px);
+      color: var(--text);
+      z-index: 100;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, .4);
+      font-size: 15px;
+    }
+
+    body[data-theme="dark"] .toast {
+      background: rgba(0, 0, 0, .5);
+    }
+
+    .toast[data-show="true"] {
+      display: flex;
+    }
+
+    .toast i {
+      color: var(--accent);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .stack .card {
+        flex-direction: column;
+      }
+
+      .block .profile {
+        flex-direction: column;
+        gap: 18px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body data-theme="light">
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#short-bio" aria-label="Back to short biography">
+          <img src="./assets/logo.jpg" alt="Ke Chen's logo" loading="lazy" />
+          <div class="title"><strong>Ke Chen's Homepage</strong><!-- <span>Homepage</span> --></div>
+        </a>
+
+        <nav class="btns" aria-label="Site navigation">
+          <a class="text-btn" href="#bio">Biography</a>
+          <a class="text-btn" href="#pubs">Publications</a>
+          <a class="text-btn" href="#exper">Experience</a>
+          <button type="button" class="icon-btn" id="theme" aria-label="Toggle theme" title="Toggle Theme"><i
+              class="fa-solid fa-sun"></i><span>Theme</span></button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <!-- HERO / PROFILE -->
+      <section id="short-bio" class="section">
+        <div class="block span" style="--span: 12">
+          <div class="profile">
+
+            <div class="avatar">
+              <img src="./assets/avatar.jpg" alt="Ke Chen headshot" loading="lazy" />
+            </div>
+
+            <div class="person">
+              <div class="name"><strong>Ke Chen</strong> <span>PhD Student</span></div>
+              <div class="address">School of Mathematical Sciences </div>
+              <div class="address" style="margin:-5px 0px 10px">University of Science and Technology of China</div>
+              <div class="contact"><span class="dot"></span><span>Email: ckck [AT] mail.ustc.edu.cn</span></div>
+              <div class="btns">
+                <!-- <a class="link" href="#" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-file-lines"></i> CV</a> -->
+                <a class="icon-btn" href="https://scholar.google.com/citations?user=Hbkn6vkAAAAJ&hl=en" target="_blank"
+                  rel="noopener noreferrer"><i class="fa-solid fa-graduation-cap"></i> Google
+                  Scholar</a>
+                <a class="icon-btn" href="https://github.com/KeChern" target="_blank" rel="noopener noreferrer"><i
+                    class="fa-brands fa-github"></i> GitHub</a>
+                <a class="icon-btn" href="https://orcid.org/0009-0000-4791-7711" target="_blank"
+                  rel="noopener noreferrer"><i class="fa-brands fa-orcid"></i> ORCID</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Biography -->
+      <section id="bio" class="section">
+        <div class="block span" style="--span: 6">
+          <h1>Biography</h1>
+          <p class="desc">
+            I am a PhD student in the
+            <a href="http://gcl.ustc.edu.cn/en/" target="_blank" rel="noopener noreferrer">Graphics &amp; Geometric
+              Computing Laboratory</a> (GCL),
+            <a href="https://en.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and
+              Technology of China</a> (USTC),
+            under the supervision of
+            <a href="http://staff.ustc.edu.cn/~lgliu/" target="_blank" rel="noopener noreferrer">Prof. Ligang
+              Liu</a>.
+            I earned my bachelor’s degree in Information and Computing Science from USTC in 2023.
+            My research interest is in computer graphics.
+            Now I am a visiting student in
+            <a href="https://sutd-cgl.github.io/" target="_blank" rel="noopener noreferrer">Computer Graphics
+              Laboratory</a>
+            (CGL)
+            of <a href="https://www.sutd.edu.sg/" target="_blank" rel="noopener noreferrer">Singapore University of
+              Technology and Design</a> (SUTD),
+            under the supervision of
+            <a href="https://songpenghit.github.io/" target="_blank" rel="noopener noreferrer">Prof. Peng Song</a>.
+          </p>
+          <h1 style="margin: 35px 0px 15px">Research Interests</h1>
+          <div class="chips">
+            <span class="chip">Computer Graphics</span>
+            <span class="chip">Computational Design</span>
+            <span class="chip">Geometric Modeling</span>
+          </div>
+        </div>
+        <div class="block span" style="--span: 6">
+          <h1>Education</h1>
+          <div class="stack">
+            <div class="card">
+              <div class="brand-logo"><img src="./assets/ustc.png" alt="ustc icon" /></div>
+              <div>
+                <h2>USTC</h2>
+                <div class="meta">2023.9 - Now</div>
+                <p class="desc">PhD student in Computer Graphics</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="brand-logo"><img src="./assets/sutd.png" alt="sutd icon" style="width:50px" /></div>
+              <div>
+                <h2>SUTD</h2>
+                <div class="meta">2024.9 - 2026.4</div>
+                <p class="desc">Visiting student in Computer Graphics</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="brand-logo"><img src="./assets/ustc.png" alt="ustc icon" /></div>
+              <div>
+                <h2>USTC</h2>
+                <div class="meta">2019.9 - 2023.6</div>
+                <p class="desc">B.S in Information and Computing Science</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section id="pubs" class="section">
+        <div class="block span" style="--span: 12">
+          <h1>Publications</h1>
+          <div class="stack">
+            <div class="card">
+              <div class="figure">
+                <img src="./assets/mpcMech.gif" alt="mpcMech gif" />
+              </div>
+              <div>
+                <h2>mpcMech: Multi-Point Conjugation Mechanisms</h2>
+                <!-- <div class="meta">SIGGRAPH / TOG • 2026</div> -->
+                <p class="desc">
+                  <strong>Ke Chen</strong>, Siqi Li, Peng Song, Jianmin Zheng, Ligang Liu
+                  <br> ACM Transactions on Graphics (Proc. <strong>SIGGRAPH Asia</strong>), 43(6), 2024.
+                </p>
+                <div class="btns">
+                  <a class="icon-btn"
+                    href="https://sutd-cgl.github.io/supp/Publication/projects/2024-SIGAsia-mpcMech/index.html"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-house"></i>Homepage</a>
+                  <a class="icon-btn"
+                    href="https://sutd-cgl.github.io/supp/Publication/projects/2024-SIGAsia-mpcMech/download/2024-SIGAsia-mpcMech.pdf"
+                    target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+                  <!-- <a class="icon-btn" href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Code</a> -->
+                  <a class="icon-btn" href="https://www.youtube.com/watch?v=diFRJ4a3WzI" target="_blank"
+                    rel="noopener noreferrer"><i class="fa-regular fa-circle-play"></i>Video</a>
+                  <a class="icon-btn" href="https://dl.acm.org/doi/10.1145/3687770" target="_blank"
+                    rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i>ACM Portal</a>
+                </div>
+              </div>
+              <!-- <i class="fa-solid fa-chevron-right chev"></i> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEACHING / STUDENTS -->
+      <section id="exper" class="section">
+        <div class="block span" style="--span: 6">
+          <h1>Teaching</h1>
+          <div class="stack">
+            <div class="card">
+              <div class="brand-logo"><img src="./assets/ustc.png" alt="ustc icon" /></div>
+              <div>
+                <h2>Teaching Assistant</h2>
+                <div class="meta">fall semester, 2022</div>
+                <p class="desc">MATH1003.01: Mathematical Analysis A3 (Series & Fourier Analysis)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block span" style="--span: 6">
+          <h1>Awards</h1>
+          <div class="stack">
+            <div class="card">
+              <div class="brand-logo"><img src="./assets/ustc.png" alt="ustc icon" /></div>
+              <div>
+                <h2>National Scholarship for Graduate Students <br> (研究生国家奖学金)</h2>
+                <div class="meta">2024.11</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="brand-logo"><img src="./assets/ustc.png" alt="ustc icon" /></div>
+              <div>
+                <h2>University-level Outstanding Undergraduate Thesis Award <br> (校级优秀本科毕业论文奖)</h2>
+                <div class="meta">2023.06</div>
+                <p class="desc"><strong>Thesis Title:</strong> <br>Mechanism Design based on Gears</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Extra -->
+      <!-- <section id="teaching" class="section">
+        <div class="block span" style="--span: 6">
+          <h1>Teaching</h1>
+          <div class="stack">
+            <div class="card">
+              <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div>
+                <h2>Course A — Graphics / Geometry</h2>
+                <div class="meta">TA • 2025</div>
+                <p class="desc">A short course description and what you covered (assignments / discussions /
+                  project).</p>
+              </div>
+              <i class="fa-solid fa-chevron-right chev"></i>
+            </div>
+            <div class="card">
+              <div class="icon"><i class="fa-solid fa-square-root-variable"></i></div>
+              <div>
+                <h2>Course B — Optimization</h2>
+                <div class="meta">Lecturer / Guest • 2024</div>
+                <p class="desc">A short description, topics, and links to notes and project outcomes.</p>
+              </div>
+              <i class="fa-solid fa-chevron-right chev"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="block span" style="--span: 6">
+          <h1>Students / Collaborators</h1>
+          <div class="chips">
+            <span class="chip">Prospective students: welcome</span>
+            <span class="chip">Collaboration: open</span>
+            <span class="chip">Topics: geometry • design • systems</span>
+          </div>
+          <div style="margin-top:14px;">
+            <button class="icon-btn"><i class="fa-regular fa-comment-dots"></i>
+              Prospective Students</button>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- SERVICE / TALKS / AWARDS -->
+      <!-- <section id="service" class="section">
+        <div class="block span" style="--span: 6">
+          <h1>Service</h1>
+          <div class="stack">
+            <div class="card">
+              <div class="icon"><i class="fa-regular fa-circle-check"></i></div>
+              <div>
+                <h2>Reviewer</h2>
+                <div class="meta">SIGGRAPH • TOG • EG • SGP</div>
+                <p class="desc">List reviewing/organizing experience (optional).</p>
+              </div>
+              <i class="fa-solid fa-chevron-right chev"></i>
+            </div>
+            <div class="card">
+              <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+              <div>
+                <h2>Community</h2>
+                <div class="meta">open-source • reading group</div>
+                <p class="desc">List communities/reading groups/open-source maintenance.</p>
+              </div>
+              <i class="fa-solid fa-chevron-right chev"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="block span" style="--span: 6">
+          <h1>Talks & Awards</h1>
+          <div class="stack">
+            <div class="card">
+              <div class="icon"><i class="fa-regular fa-circle-play"></i></div>
+              <div>
+                <h2>Invited Talk — Topic</h2>
+                <div class="meta">Institution • 2025</div>
+                <p class="desc">One line describing the talk and links (slides/video).</p>
+              </div>
+              <i class="fa-solid fa-chevron-right chev"></i>
+            </div>
+
+            <div class="card">
+              <div class="icon"><i class="fa-solid fa-award"></i></div>
+              <div>
+                <h2>Award / Scholarship</h2>
+                <div class="meta">Organization • 2024</div>
+                <p class="desc">Award name, level, and a short note.</p>
+              </div>
+              <i class="fa-solid fa-chevron-right chev"></i>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <footer>© 2026 Ke Chen · Last updated Feb 2026</footer>
+    </div>
+  </main>
+
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <i class="fa-regular fa-circle-check"></i><span id="tText">Done</span>
+  </div>
+
+  <script>
+    const $ = (s, el = document) => el.querySelector(s);
+    const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+
+    /* Reveal on scroll */
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.dataset.in = 'true';
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.15 });
+    $$('.section').forEach(el => io.observe(el));
+
+    /* Toast */
+    let toastTimer = null;
+    function toast(msg) {
+      const tt = $('#tText');
+      const t = $('#toast');
+      if (!tt || !t) return;
+      tt.textContent = msg;
+      t.dataset.show = 'true';
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.dataset.show = 'false', 2500);
+    }
+
+    /* Theme */
+    const is_theme = $('#theme');
+
+    function setTheme(next) {
+      document.body.dataset.theme = next;
+      if (is_theme) is_theme.querySelector('i').className = next === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+      toast(next === 'dark' ? 'Dark theme' : 'Light theme');
+    }
+    if (is_theme) is_theme.addEventListener('click', () => {
+      const cur = document.body.dataset.theme || 'light';
+      setTheme(cur === 'dark' ? 'light' : 'dark');
+    });
+
+    /* Keep anchor offset in sync with sticky header height */
+    function syncHeaderOffset() {
+      const h = document.querySelector('header');
+      if (!h) return;
+      const px = Math.ceil(h.getBoundingClientRect().height); // +10px buffer
+      document.documentElement.style.setProperty('--header-offset', px + 'px');
+    }
+    window.addEventListener('load', syncHeaderOffset);
+    window.addEventListener('resize', syncHeaderOffset);
+
+  </script>
+</body>
+
+</html>
