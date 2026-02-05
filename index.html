@@ -229,8 +229,14 @@
       padding: 25px 25px;
     }
 
-    .span {
-      grid-column: span 12;
+    .span { 
+      grid-column: span var(--span); 
+    }
+
+    @media (max-width: 1000px) { 
+      .span { 
+        grid-column: span 12; 
+      }
     }
 
     /* Profile */
