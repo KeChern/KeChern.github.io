@@ -400,7 +400,6 @@
       align-self: center;
       overflow: visible;
       border-radius: 0px;
-      /* border: 1px solid rgba(0, 0, 0, .15); */
       flex: 0 0 auto;
     }
 
@@ -410,6 +409,8 @@
       display: block;
       object-fit: contain;
       filter: saturate(1.0) contrast(1.0);
+      align-items: center;
+      justify-content: center;
     }
 
     .block .desc {
@@ -558,6 +559,12 @@
       .nav .btns {
         gap: 1px;
       }
+    }
+    @media (max-width: 380px) {
+      .block .figure {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
@@ -623,7 +630,7 @@
             I earned my bachelor’s degree in Information and Computing Science from USTC in 2023.
             My research interest is in computer graphics.
             Now I am a visiting student in
-            <a href="https://sutd-cgl.github.io/" target="_blank" rel="noopener noreferrer">Computer Graphics Laboratory</a> (CGL) of
+            <a href="https://sutd-cgl.github.io/" target="_blank" rel="noopener noreferrer">Computer Design Laboratory</a> (CDL) of
             <a href="https://www.sutd.edu.sg/" target="_blank" rel="noopener noreferrer">Singapore University of Technology and Design</a> (SUTD),
             under the supervision of
             <a href="https://songpenghit.github.io/" target="_blank" rel="noopener noreferrer">Prof. Peng Song</a>.
@@ -642,7 +649,7 @@
               <div class="brand-logo"><img src="./assets/ustc.png" alt="ustc icon" /></div>
               <div>
                 <h2>USTC</h2>
-                <div class="meta">2023.9 - Now</div>
+                <div class="meta">2023.09 - Now</div>
                 <p class="desc">PhD student in Computer Graphics</p>
               </div>
             </div>
@@ -650,7 +657,7 @@
               <div class="brand-logo"><img src="./assets/sutd.png" alt="sutd icon" style="width: 90%;; border: 1px solid rgba(255, 255, 255, 1);" /></div>
               <div>
                 <h2>SUTD</h2>
-                <div class="meta">2024.9 - 2026.4</div>
+                <div class="meta">2024.09 - 2026.04</div>
                 <p class="desc">Visiting student in Computer Graphics</p>
               </div>
             </div>
@@ -658,7 +665,7 @@
               <div class="brand-logo"><img src="./assets/ustc.png" alt="ustc icon" /></div>
               <div>
                 <h2>USTC</h2>
-                <div class="meta">2019.9 - 2023.6</div>
+                <div class="meta">2019.09 - 2023.06</div>
                 <p class="desc">B.S in Information and Computing Science</p>
               </div>
             </div>
@@ -672,9 +679,7 @@
           <h1>Publications</h1>
           <div class="stack">
             <div class="card">
-              <div class="figure">
-                <img src="./assets/mpcMech.gif" alt="mpcMech gif" />
-              </div>
+              <div class="figure"><img src="./assets/mpcMech.gif" alt="mpcMech gif" /></div>
               <div>
                 <h2>mpcMech: Multi-Point Conjugation Mechanisms</h2>
                 <!-- <div class="meta">SIGGRAPH / TOG • 2026</div> -->
