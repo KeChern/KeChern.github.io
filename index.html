@@ -16,6 +16,8 @@
   <style>
     :root {
       /* Light as default */
+      --page-width: 1200px;
+
       --bg: rgba(255, 255, 255, 1);
       --header-bg: linear-gradient(180deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, .25));
 
@@ -76,7 +78,7 @@
     }
 
     .wrap {
-      max-width: 1000px;
+      max-width: var(--page-width);
       margin: 0 auto;
       padding: 0 15px;
     }
