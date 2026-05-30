@@ -349,7 +349,7 @@
     }
 
     .block h2 {
-      margin: 0 0 10px;
+      margin: 0 0 0px;
       font-size: 20px;
       letter-spacing: -.0em;
     }
@@ -445,12 +445,39 @@
       border-radius: 5px;
     }
 
-    .block .chev {
-      color: var(--muted);
-      margin-top: 2px;
+    .trailer {
+      margin-top: 15px;
+    }
+
+    .trailer .trailer-btn {
+      color: var(--accent);
+      border-color: rgba(150, 90, 245, 0.35);
+      background: rgba(150, 90, 245, 0.10);
+      font-weight: 650;
+    }
+
+    .trailer-btn i {
+      color: var(--accent);
+    }
+
+    .trailer-btn:hover {
+      color: var(--text);
+      border-color: var(--accent);
+      background: rgba(150, 90, 245, 0.16);
+    }
+
+    body[data-theme="dark"] .trailer-btn {
+      background: rgba(0, 120, 255, 0.15);
+      border-color: rgba(0, 120, 255, 0.35);
+    }
+
+    body[data-theme="dark"] .trailer-btn:hover {
+      background: rgba(0, 120, 255, 0.24);
+      color: var(--text);
     }
 
     .block .meta {
+      margin-top: 10px;
       font-family: var(--mono);
       font-size: 13px;
       color: var(--muted);
@@ -689,14 +716,13 @@
                   <strong>Ke Chen</strong>, Joshua John Shi Kai Lee, Jianmin Zheng, Ligang Liu, Peng Song. <br>
                   <strong>SIGGRAPH</strong> Conference Papers, 2026.
                 </p>
-                <!-- <div class="btns">
-                  <a class="icon-btn" href="https://sutd-cgl.github.io/supp/Publication/projects/2024-SIGAsia-mpcMech/index.html" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-house"></i>Homepage</a>
-                  <a class="icon-btn" href="https://sutd-cgl.github.io/supp/Publication/projects/2024-SIGAsia-mpcMech/download/2024-SIGAsia-mpcMech.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i>PDF</a>
-                  <a class="icon-btn" href="https://www.youtube.com/watch?v=diFRJ4a3WzI" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-circle-play"></i>Video</a>
-                  <a class="icon-btn" href="https://dl.acm.org/doi/10.1145/3687770" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i>ACM Portal</a>
-                </div> -->
+                <div class="btns">
+                  <a class="icon-btn" href="https://sutd-cgl.github.io/supp/Publication/projects/2026-SIGGRAPH-mpcGear/index.html" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-house"></i>Homepage</a>
+                  <a class="icon-btn" href="https://sutd-cgl.github.io/supp/Publication/papers/2026-SIGGRAPH-mpcGear.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+                  <a class="icon-btn" href="https://www.youtube.com/watch?v=v2MGVF0AfZg" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-circle-play"></i>Video</a>
+                  <!-- <a class="icon-btn" href="https://dl.acm.org/doi/10.1145/3687770" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i>ACM Portal</a> -->
+                </div>
               </div>
-              <!-- <i class="fa-solid fa-chevron-right chev"></i> -->
             </div>
 
             <div class="card">
@@ -707,14 +733,22 @@
                   Yukun Lu, <strong>Ke Chen</strong>, Ligang Liu, Peng Song. <br>
                   <strong>SIGGRAPH</strong> Conference Papers, 2026.
                 </p>
-                <!-- <div class="btns">
-                  <a class="icon-btn" href="https://sutd-cgl.github.io/supp/Publication/projects/2024-SIGAsia-mpcMech/index.html" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-house"></i>Homepage</a>
-                  <a class="icon-btn" href="https://sutd-cgl.github.io/supp/Publication/projects/2024-SIGAsia-mpcMech/download/2024-SIGAsia-mpcMech.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i>PDF</a>
-                  <a class="icon-btn" href="https://www.youtube.com/watch?v=diFRJ4a3WzI" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-circle-play"></i>Video</a>
-                  <a class="icon-btn" href="https://dl.acm.org/doi/10.1145/3687770" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i>ACM Portal</a>
-                </div> -->
+                
+                <div class="btns">
+                  <a class="icon-btn" href="https://sutd-cgl.github.io/supp/Publication/projects/2026-SIGGRAPH-CoordinateMotion/index.html" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-house"></i>Homepage</a>
+                  <a class="icon-btn" href="https://sutd-cgl.github.io/supp/Publication/papers/2026-SIGGRAPH-CoordinateMotion.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+                  <a class="icon-btn" href="https://www.youtube.com/watch?v=ROrFqAJH51Q" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-circle-play"></i>Video</a>
+                  <!-- <a class="icon-btn" href="https://dl.acm.org/doi/10.1145/3687770" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i>ACM Portal</a> -->
+                </div>
+
+                <div class="trailer">
+                  <a class="icon-btn trailer-btn" href="https://www.youtube.com/watch?v=sIcGH3M5yPc" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-regular fa-circle-play"></i>
+                    Selected for inclusion in the Technical Papers Video Trailer
+                  </a>
+                </div>
+
               </div>
-              <!-- <i class="fa-solid fa-chevron-right chev"></i> -->
             </div>
 
             <div class="card">
@@ -733,8 +767,8 @@
                   <a class="icon-btn" href="https://dl.acm.org/doi/10.1145/3687770" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i>ACM Portal</a>
                 </div>
               </div>
-              <!-- <i class="fa-solid fa-chevron-right chev"></i> -->
             </div>
+
           </div>
         </div>
       </section>
@@ -789,7 +823,6 @@
                 <p class="desc">A short course description and what you covered (assignments / discussions /
                   project).</p>
               </div>
-              <i class="fa-solid fa-chevron-right chev"></i>
             </div>
             <div class="card">
               <div class="icon"><i class="fa-solid fa-square-root-variable"></i></div>
@@ -798,7 +831,6 @@
                 <div class="meta">Lecturer / Guest • 2024</div>
                 <p class="desc">A short description, topics, and links to notes and project outcomes.</p>
               </div>
-              <i class="fa-solid fa-chevron-right chev"></i>
             </div>
           </div>
         </div>
@@ -829,7 +861,6 @@
                 <div class="meta">SIGGRAPH • TOG • EG • SGP</div>
                 <p class="desc">List reviewing/organizing experience (optional).</p>
               </div>
-              <i class="fa-solid fa-chevron-right chev"></i>
             </div>
             <div class="card">
               <div class="icon"><i class="fa-solid fa-people-group"></i></div>
@@ -838,7 +869,6 @@
                 <div class="meta">open-source • reading group</div>
                 <p class="desc">List communities/reading groups/open-source maintenance.</p>
               </div>
-              <i class="fa-solid fa-chevron-right chev"></i>
             </div>
           </div>
         </div>
@@ -853,7 +883,6 @@
                 <div class="meta">Institution • 2025</div>
                 <p class="desc">One line describing the talk and links (slides/video).</p>
               </div>
-              <i class="fa-solid fa-chevron-right chev"></i>
             </div>
 
             <div class="card">
@@ -863,7 +892,6 @@
                 <div class="meta">Organization • 2024</div>
                 <p class="desc">Award name, level, and a short note.</p>
               </div>
-              <i class="fa-solid fa-chevron-right chev"></i>
             </div>
           </div>
         </div>
