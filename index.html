@@ -631,7 +631,7 @@
           <div class="profile">
 
             <div class="avatar">
-              <img src="./assets/avatar2.png" alt="Ke Chen headshot" loading="lazy" />
+              <img src="./assets/avatar.png" data-avatar-light="./assets/avatar.png" data-avatar-dark="./assets/avatar_night.png" alt="Ke Chen headshot" loading="lazy" />
             </div>
 
             <div class="person">
@@ -942,10 +942,18 @@
 
     /* Theme */
     const is_theme = $('#theme');
+    const avatarImage = document.querySelector('.avatar img');
 
     function setTheme(next) {
       document.body.dataset.theme = next;
       if (is_theme) is_theme.querySelector('i').className = next === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+
+      if (avatarImage) {
+        avatarImage.src = next === 'dark'
+          ? avatarImage.dataset.avatarDark
+          : avatarImage.dataset.avatarLight;
+      }
+
       toast(next === 'dark' ? 'Dark theme' : 'Light theme');
     }
     if (is_theme) is_theme.addEventListener('click', () => {
