@@ -262,6 +262,7 @@
       height: auto;
       display: block;
       filter: saturate(1.0) contrast(1.0);
+      transition: opacity .7s ease, filter .7s ease;
     }
 
     .profile .person {
@@ -949,9 +950,26 @@
       if (is_theme) is_theme.querySelector('i').className = next === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
 
       if (avatarImage) {
-        avatarImage.src = next === 'dark'
+        const nextSrc = next === 'dark'
           ? avatarImage.dataset.avatarDark
           : avatarImage.dataset.avatarLight;
+
+        if (!nextSrc) {
+          toast(next === 'dark' ? 'Dark theme' : 'Light theme');
+          return;
+        }
+
+        avatarImage.style.opacity = '0';
+        avatarImage.style.filter = 'blur(6px)';
+        const nextImage = new Image();
+        nextImage.onload = () => {
+          window.setTimeout(() => {
+            avatarImage.src = nextSrc;
+            avatarImage.style.opacity = '1';
+            avatarImage.style.filter = 'blur(0)';
+          }, 90);
+        };
+        nextImage.src = nextSrc;
       }
 
       toast(next === 'dark' ? 'Dark theme' : 'Light theme');
