@@ -1,0 +1,140 @@
+% Academic CV for Ke Chen.
+% Content sources: ../index.html and additional details supplied by Ke Chen.
+% Adapted from the Academic CV LaTeX Template by Dubasi Pavan Kumar.
+% Original template license: MIT.
+% Compile from the repository root with:
+% pdflatex -jobname=Ke_Chen_CV -output-directory=assets/cv assets/cv/cv.tex
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage[left=1.7cm,right=1.7cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{hyperref}
+
+\definecolor{darkblue}{RGB}{0,0,139}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=darkblue,
+  linkcolor=darkblue,
+  pdftitle={Ke Chen - Curriculum Vitae},
+  pdfauthor={Ke Chen},
+  pdfsubject={Academic curriculum vitae}
+}
+\urlstyle{same}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\raggedright
+
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{5pt}
+
+% A wrapping institution/role column keeps long names clear of the dates.
+\newcommand{\cvheading}[2]{%
+  \begin{tabularx}{\linewidth}{@{}X@{\hspace{1em}}r@{}}
+    \textbf{#1} & #2
+  \end{tabularx}\par
+}
+\newcommand{\cventry}[4]{%
+  \Needspace{4\baselineskip}%
+  \cvheading{#1}{#2}%
+  #3\par
+  #4\par
+}
+\newcommand{\entrygap}{\vspace{4pt}}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{28}{32}\selectfont\textbf{Ke Chen}}\\[4pt]
+  PhD Student in Computer Graphics\\[3pt]
+  Graphics \& Geometric Computing Laboratory, School of Mathematical Sciences\\
+  University of Science and Technology of China\\[5pt]
+  \href{mailto:ckck@mail.ustc.edu.cn}{ckck@mail.ustc.edu.cn}
+  \enspace\textbar\enspace
+  \href{https://kechern.github.io/}{kechern.github.io}\\[3pt]
+  \href{https://scholar.google.com/citations?user=Hbkn6vkAAAAJ&hl=en}{Google Scholar}
+  \enspace\textbar\enspace
+  \href{https://github.com/KeChern}{GitHub: KeChern}
+  \enspace\textbar\enspace
+  \href{https://orcid.org/0009-0000-4791-7711}{ORCID: 0009-0000-4791-7711}
+\end{center}
+
+\section{Research Interests}
+Computer Graphics; Computational Design; Geometric Modeling.
+
+\section{Education}
+\cventry
+  {University of Science and Technology of China (USTC)}
+  {Sep. 2023 -- Present}
+  {PhD Student in Computer Graphics}
+  {Advisor: \href{http://staff.ustc.edu.cn/~lgliu/}{Prof. Ligang Liu}}
+\entrygap
+
+\cventry
+  {Singapore University of Technology and Design (SUTD)}
+  {Sep. 2024 -- Apr. 2026}
+  {Visiting Student in Computer Graphics, Computer Design Laboratory}
+  {Advisor: \href{https://songpenghit.github.io/}{Prof. Peng Song}}
+\entrygap
+
+\cvheading{University of Science and Technology of China (USTC)}{Sep. 2019 -- Jun. 2023}
+B.S. in Information and Computing Science \hfill Anhui, China\par
+Advisor: \href{http://staff.ustc.edu.cn/~lgliu/}{Prof. Ligang Liu}\par
+Overall GPA: 3.84/4.3 \enspace\textperiodcentered\enspace Rank: 4/40 in major
+
+\section{Publications}
+\begin{enumerate}[label={[\arabic*]},leftmargin=1.8em,labelsep=0.5em,
+                  itemsep=6pt,topsep=0pt,parsep=0pt,partopsep=0pt]
+  \item \textbf{mpcGear: Multi-Point Conjugation Gear Mechanisms}\\
+    \textbf{Ke Chen}, Joshua John Shi Kai Lee, Jianmin Zheng, Ligang Liu, Peng Song.\\
+    \textcolor{darkblue}{\textbf{SIGGRAPH}} Conference Papers, 2026.
+    \href{https://sutd-cgl.github.io/supp/Publication/projects/2026-SIGGRAPH-mpcGear/index.html}{[Project]}
+    \href{https://sutd-cgl.github.io/supp/Publication/papers/2026-SIGGRAPH-mpcGear.pdf}{[PDF]}
+    \href{https://dl.acm.org/doi/10.1145/3799902.3811089}{[DOI]}
+
+  \item \textbf{Computational Design of Coordinate-Motion Assemblies}\\
+    Yukun Lu, \textbf{Ke Chen}, Ligang Liu, Peng Song.\\
+    \textcolor{darkblue}{\textbf{SIGGRAPH}} Conference Papers, 2026.
+    \href{https://sutd-cgl.github.io/supp/Publication/projects/2026-SIGGRAPH-CoordinateMotion/index.html}{[Project]}
+    \href{https://sutd-cgl.github.io/supp/Publication/papers/2026-SIGGRAPH-CoordinateMotion.pdf}{[PDF]}
+    \href{https://dl.acm.org/doi/10.1145/3799902.3811068}{[DOI]}\\
+    \textit{Selected for inclusion in the}
+    \href{https://www.youtube.com/watch?v=sIcGH3M5yPc}{\textit{Technical Papers Video Trailer}}.
+
+  \item \textbf{mpcMech: Multi-Point Conjugation Mechanisms}\\
+    \textbf{Ke Chen}, Siqi Li, Peng Song, Jianmin Zheng, Ligang Liu.\\
+    ACM Transactions on Graphics (Proc. \textcolor{darkblue}{\textbf{SIGGRAPH Asia}}), 43(6), 2024.
+    \href{https://sutd-cgl.github.io/supp/Publication/projects/2024-SIGAsia-mpcMech/index.html}{[Project]}
+    \href{https://sutd-cgl.github.io/supp/Publication/projects/2024-SIGAsia-mpcMech/download/2024-SIGAsia-mpcMech.pdf}{[PDF]}
+    \href{https://dl.acm.org/doi/10.1145/3687770}{[DOI]}
+\end{enumerate}
+
+\section{Research Experience}
+\cvheading{High-Order Nonlinear Interpolation for\newline Discontinuous Functions and Applications}{Jun. 2021 -- Apr. 2023}
+\textit{Undergraduate Innovation Training Program, USTC}\par
+Advisor: Prof. Yinhua Xia
+
+\section{Teaching Experience}
+\cvheading{Teaching Assistant, USTC}{Fall 2022}
+MATH1003.01: Mathematical Analysis A3 (Series \& Fourier Analysis)
+
+\section{Honors \& Awards}
+\cvheading{National Scholarship for Graduate Students}{Nov. 2024}
+\entrygap
+\cvheading{University-level Outstanding Undergraduate Thesis Award, USTC}{Jun. 2023}
+Thesis: \textit{Mechanism Design based on Gears}
+
+\section{Academic Service}
+\textbf{Reviewing:} ACM SIGGRAPH; ACM SIGGRAPH Asia.
+
+\end{document}
